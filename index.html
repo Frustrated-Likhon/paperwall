@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PaperWall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">PaperWall</h1>
+
+        <input type="text" id="searchInput" placeholder="Search posts...">
+
+        <div class="post-creator">
+            <textarea id="postText" placeholder="Write something anonymous..."></textarea>
+            <div class="creator-bottom">
+                <div class="file-upload">
+                    <label for="imageInput" class="file-label">
+                        <ion-icon name="image-outline"></ion-icon>
+                        Add Image
+                    </label>
+                    <input type="file" id="imageInput" accept="image/*">
+                    <span id="fileName" class="file-name"></span>
+                </div>
+                <button id="postBtn" class="primary-btn">Post</button>
+            </div>
+        </div>
+
+        <div id="feed"></div>
+    </div>
+
+    <div class="bottom-info">
+        <p>&copy; 2026 PaperWall. Developed by Likhon Bin Liakat. 
+            <a href="mailto:likhon.din.spshc@gmail.com">Email</a> |
+            <a href="https://github.com/Frustrated-Likhon" target="_blank">GitHub</a> | 
+            <a href="https://frustrated-likhon.github.io" target="_blank">Portfolio</a>
+        </p>
+    </div>
+
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Comments</span>
+                <span id="closeModal" class="close-btn">×</span>
+            </div>
+            <div id="modalComments" class="modal-comments"></div>
+            <div class="modal-input">
+                <input type="text" id="modalCommentInput" placeholder="Write a comment...">
+                <button id="modalCommentBtn" class="primary-btn">Post</button>
+            </div>
+        </div>
+    </div>
+        <div id="welcomeModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Welcome to PaperWall!</h4>
+                    <span id="closeWelcome" class="close-btn">×</span>
+                </div>
+                <p class="compact">It's a tiny anonymous social space</p>
+                <ul class="compact">
+                    <li>📝 No spam, just vibes</li>
+                    <li>🤝 Be decent to each other</li>
+                    <li>🕵️ Stay anonymous</li>
+                    <li>🎯 Keep it clean-ish</li>
+                </ul>
+                
+                <div class="device-note">
+                    <span class="device-badge">📱 NOTE</span>
+                    <p class="device-message">I built this mostly on desktop so mobile might be a lil rough. Fixing things as I go- Thanks for your patience!</p>
+                </div>
+                
+                <div class="beta-tag">
+                    <span class="beta-badge">⚡ BETA</span>
+                    <p class="beta-message">Just me building this solo. If something breaks or you have ideas, <a href="mailto:likhon.din.spshc@gmail.com">let me know</a> - I actually read everything.</p>
+                </div>
+                
+                <div class="dev-info">
+                    <p class="dev-name">Made by Likhon Bin Liakat</p>
+                    <p class="dev-links">
+                        <a href="mailto:likhon.din.spshc@gmail.com">📧 Email</a> • 
+                        <a href="https://github.com/Frustrated-Likhon" target="_blank">💻 GitHub</a> • 
+                        <a href="https://frustrated-likhon.github.io" target="_blank">🌐 Portfolio</a>
+                    </p>
+                </div>
+                <button id="acceptWelcome" class="primary-btn">Start Exploring</button>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
