@@ -160,11 +160,12 @@ button.primary-btn:active {
 
 .post-image {
     width: 100%;
-    max-height: 250px;
-    object-fit: cover;
+    max-height: 500px;
+    object-fit: contain;
     border-radius: 6px;
     margin: 3px 0;
     border: 1px solid #ddd6c8;
+    background-color: #faf8f2;
 }
 
 .timestamp {
