@@ -10,7 +10,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-const ADMIN_PASSWORD = "YourSecret123";
+const ADMIN_PASSWORD = "580211";
 const CLOUD_NAME = "ddpn4y3bz";
 
 document.addEventListener("DOMContentLoaded", function() {
